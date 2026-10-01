@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.12" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
-        <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.12" />
     <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="10.0.12" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.12" />
@@ -19,6 +19,7 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="GDB.Core\**" />
     <Compile Remove="GDB.WebApi\**" />
@@ -27,4 +28,5 @@
     <None Remove="GDB.Core\**" />
     <None Remove="GDB.WebApi\**" />
   </ItemGroup>
+
 </Project>
