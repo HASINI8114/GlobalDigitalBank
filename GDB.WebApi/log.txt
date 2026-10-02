@@ -1,0 +1,31 @@
+2026-10-01 18:23:37.762 +05:30 [INF] Processing transaction "Deposit"
+2026-10-01 18:23:38.346 +05:30 [ERR] Connection string 'GDBConnection' is missing from App.config
+2026-10-01 18:23:38.528 +05:30 [ERR] Failed to fetch account 100000101
+System.Configuration.ConfigurationErrorsException: Connection string 'GDBConnection' not found.
+   at GDB.App.Infrastructure.Repositories.DataBaseConnectionManager.GetConnection() in E:\GlobalDigitalBank\Infrastructure\Repositories\DataBaseConnectionManager.cs:line 25
+   at GDB.App.Infrastructure.Repositories.Implementations.AccountRepositoryDB.GetAccountAsync(String accountNumber) in E:\GlobalDigitalBank\Infrastructure\Repositories\Implementations\AccountRepositoryDB.cs:line 21
+2026-10-01 18:24:03.936 +05:30 [ERR] Connection string 'GDBConnection' is missing from App.config
+2026-10-01 18:24:03.963 +05:30 [ERR] Failed to fetch all accounts
+System.Configuration.ConfigurationErrorsException: Connection string 'GDBConnection' not found.
+   at GDB.App.Infrastructure.Repositories.DataBaseConnectionManager.GetConnection() in E:\GlobalDigitalBank\Infrastructure\Repositories\DataBaseConnectionManager.cs:line 25
+   at GDB.App.Infrastructure.Repositories.Implementations.AccountRepositoryDB.GetAllAccounts() in E:\GlobalDigitalBank\Infrastructure\Repositories\Implementations\AccountRepositoryDB.cs:line 445
+2026-10-01 18:28:39.223 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:28:39.260 +05:30 [ERR] Connection string 'GDBConnection' is missing from configuration and environment.
+2026-10-01 18:28:39.270 +05:30 [ERR] Failed to fetch all accounts
+System.Configuration.ConfigurationErrorsException: Connection string 'GDBConnection' not found in configuration or environment.
+   at GDB.App.Infrastructure.Repositories.DataBaseConnectionManager.GetConnection() in E:\GlobalDigitalBank\Infrastructure\Repositories\DataBaseConnectionManager.cs:line 30
+   at GDB.App.Infrastructure.Repositories.Implementations.AccountRepositoryDB.GetAllAccounts() in E:\GlobalDigitalBank\Infrastructure\Repositories\Implementations\AccountRepositoryDB.cs:line 445
+2026-10-01 18:31:43.527 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:32:59.873 +05:30 [INF] Processing transaction "Deposit"
+2026-10-01 18:32:59.886 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:33:00.126 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:33:00.291 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:33:00.572 +05:30 [INF] Deposited ₹100.00 to 1000001003
+2026-10-01 18:33:00.585 +05:30 [INF] Transaction "Deposit" completed successfully
+2026-10-01 18:37:25.544 +05:30 [INF] Processing transaction "Transfer"
+2026-10-01 18:37:25.560 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:37:25.693 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:37:25.734 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:37:25.848 +05:30 [WRN] Connection string 'GDBConnection' not found in configuration. Falling back to environment variable 'GDBConnection'.
+2026-10-01 18:37:25.915 +05:30 [INF] Transferred ₹100.00 from 1000001003 to 1000001004
+2026-10-01 18:37:25.924 +05:30 [INF] Transaction "Transfer" completed successfully

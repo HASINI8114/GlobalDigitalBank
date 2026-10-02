@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GDB.Core\GDB.Core.csproj" />
+    <ProjectReference Include="..\GDB.App.csproj" />
   </ItemGroup>
 
 </Project>
