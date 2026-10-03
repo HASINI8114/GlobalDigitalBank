@@ -23,16 +23,15 @@ namespace GDB.WebApi.Controllers
 
         [HttpPost("deposit")]
         public async Task<IActionResult> Deposit(
-            string accountNumber, decimal amount)
+     [FromBody] DepositRequestDto request)
         {
-            TransactionDto transactionDto =
-                new TransactionDto
-                {
-                    AccountNumber = accountNumber,
-                    Amount = amount
-                };
+            var transactionDto = new TransactionDto
+            {
+                AccountNumber = request.AccountNumber,
+                Amount = request.Amount
+            };
 
-            DepositResponseDto response =
+            var response =
                 await _transactionService
                     .ProcessTransactionAsync<DepositResponseDto>(
                         transactionDto,
@@ -42,18 +41,16 @@ namespace GDB.WebApi.Controllers
         }
 
         [HttpPost("withdraw")]
-        public async Task<IActionResult> Withdraw(
-            string accountNumber, string pin, decimal amount)
+        public async Task<IActionResult> Withdraw([FromBody] WithdrawRequestDto request)
         {
-            TransactionDto transactionDto =
-                new TransactionDto
-                {
-                    AccountNumber = accountNumber,
-                    Pin = pin,
-                    Amount = amount
-                };
+            var transactionDto = new TransactionDto
+            {
+                AccountNumber = request.AccountNumber,
+                Pin = request.Pin,
+                Amount = request.Amount
+            };
 
-            WithdrawResponseDto response =
+            var response =
                 await _transactionService
                     .ProcessTransactionAsync<WithdrawResponseDto>(
                         transactionDto,
@@ -62,23 +59,20 @@ namespace GDB.WebApi.Controllers
             return Ok(response);
         }
 
+
         [HttpPost("transfer")]
         public async Task<IActionResult> TransferFunds(
-            string fromAccountNumber,
-            string toAccountNumber,
-            string pin,
-            decimal amount)
+            [FromBody] TransferRequestDto request)
         {
-            TransactionDto transactionDto =
-                new TransactionDto
-                {
-                    FromAccount = fromAccountNumber,
-                    ToAccount = toAccountNumber,
-                    Pin = pin,
-                    Amount = amount
-                };
+            var transactionDto = new TransactionDto
+            {
+                FromAccount = request.FromAccount,
+                ToAccount = request.ToAccount,
+                Pin = request.Pin,
+                Amount = request.Amount
+            };
 
-            TranferFundsResponseDto response =
+            var response =
                 await _transactionService
                     .ProcessTransactionAsync<TranferFundsResponseDto>(
                         transactionDto,

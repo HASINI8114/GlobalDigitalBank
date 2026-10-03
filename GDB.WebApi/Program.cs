@@ -7,6 +7,7 @@ using GDB.Core.Application.Services.Contracts;
 using GDB.Core.Application.Services.Implementations;
 using GDB.Core.Infrastructure.Repositories;
 using GDB.Core.Infrastructure.Repositories.Contracts;
+using GDB.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,7 @@ builder.Services.AddScoped<ITransactionQueryService, TransactionQueryService>();
 builder.Services.AddScoped<TransactionCommandFactory>();
 
 var app = builder.Build();
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

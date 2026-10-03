@@ -24,7 +24,7 @@ namespace GDB.App.Application.Services.Implementations
                 AccountRepositoryFactory.Create("DB");
 
             _transactionRepository =
-                TransactionRepositoryFactory.Create("DB");
+                    TransactionRepositoryFactory.Create("DB");
         }
 
 
